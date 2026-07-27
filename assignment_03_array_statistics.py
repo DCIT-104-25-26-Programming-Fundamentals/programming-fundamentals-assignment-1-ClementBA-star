@@ -39,3 +39,69 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def calculate_sum(numbers):
+    """Return the sum of all numbers in the list."""
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+
+def calculate_average(numbers):
+    """Return the average of all numbers in the list."""
+    total = 0
+    for num in numbers:
+        total += num
+    return total / len(numbers)
+
+
+def calculate_maximum(numbers):
+    """Return the largest number in the list."""
+    largest = numbers[0]
+    for num in numbers:
+        if num > largest:
+            largest = num
+    return largest
+
+
+def calculate_minimum(numbers):
+    """Return the smallest number in the list."""
+    smallest = numbers[0]
+    for num in numbers:
+        if num < smallest:
+            smallest = num
+    return smallest
+
+
+def main():
+    # Get how many numbers the user wants to enter
+    n = int(input("How many numbers? "))
+
+    # Validate that n is a positive integer
+    if n <= 0:
+        print("Error: please enter a positive integer greater than 0.")
+        return
+
+    # Collect the numbers from the user
+    numbers = []
+    for i in range(1, n + 1):
+        num = float(input(f"Enter number {i}: "))
+        numbers.append(num)
+
+    # Compute statistics using our functions
+    total   = calculate_sum(numbers)
+    average = calculate_average(numbers)
+    maximum = calculate_maximum(numbers)
+    minimum = calculate_minimum(numbers)
+
+    # Display results
+    print("\nResults:")
+    # Print whole numbers without a decimal point, fractions with one decimal
+    print(f"Sum:     {total:g}")
+    print(f"Average: {average:g}")
+    print(f"Maximum: {maximum:g}")
+    print(f"Minimum: {minimum:g}")
+
+
+if __name__ == "__main__":
+    main()

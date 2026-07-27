@@ -48,4 +48,28 @@
 # =============================================================================
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
+def main():
+    print("Fibonacci Sequence Generator")
+    print("-----------------------------")
+    print("A) Print the first N terms")
+    print("B) Check if a number is a Fibonacci number")
 
+    choice = input("\nChoose a part to run (A / B): ").strip().upper()
+
+    if choice == "A":
+        n = int(input("How many terms? "))
+        print_fibonacci(n)
+
+    elif choice == "B":
+        number = int(input("Enter a number to check: "))
+        if is_fibonacci(number):
+            print(f"{number} is a Fibonacci number.")
+        else:
+            print(f"{number} is NOT a Fibonacci number.")
+
+    else:
+        print("Invalid choice. Please enter A or B.")
+
+
+if __name__ == "__main__":
+    main()
